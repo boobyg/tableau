@@ -55,19 +55,19 @@ view: order_items {
     # hidden: yes
     sql: ${TABLE}.user_id ;;
   }
-  measure: count {
+  measure: measure_count {
     type: count
     drill_fields: [detail*]
   }
 
-  measure: avg_sale_price{
+  measure: measure_avg_sale_price{
     type: average
     sql: ${sale_price} ;;
     value_format_name: eur
     drill_fields: [detail*]
   }
 
-  measure: total_revenue{
+  measure: measure_total_revenue{
     type: sum
     sql: ${sale_price};;
     value_format_name: eur
